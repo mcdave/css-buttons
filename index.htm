@@ -7,40 +7,44 @@
 
 	<link rel="stylesheet" href="screen.css" type="text/css" media="screen" title="no title" charset="utf-8">
 </head>
-
 <body>
+	<h1>Custom Buttons 3.0 (demo)</h1>
 
-<h1>Custom Buttons 3.0 (demo)</h1>
+	<p class="s0"><strong>Updated:</strong> 27 Feb 2008</p>
 
-<p class="s0"><strong>Updated:</strong> 27 Feb 2008</p>
+	<p>This doc attempts to show how custom buttoms with a 1px radius could be created without corner images. The gradient requires an image, but is optional. Ideally, the <code>&lt;button&gt;</code> element should be used if possible (instead of <code>&lt;a&gt;</code>) for semantic and accessibility reasons. Note that the hover state will not work on <code>button</code> elements for IE6 and lower without using JavaScript to detect a mouseOver event.</p>
 
-<p>This doc attempts to show how custom buttoms with a 1px radius could be created without corner images. The gradient requires an image, but is optional. Ideally, the <code>&lt;button&gt;</code> element should be used if possible (instead of <code>&lt;a&gt;</code>) for semantic and accessibility reasons. Note that the hover state will not work on <code>button</code> elements for IE6 and lower without using JavaScript to detect a mouseOver event.</p>
+	<form action="#">
+		<p>
+			<a href="#" class="btn"><span><span>button</span></span></a> &nbsp;<code>&lt;a&gt;</code>
+		</p>
+		<p>
+			<button type="button" class="btn"><span><span>button</span></span></button> &nbsp;<code>&lt;button&gt;</code>
+		</p>
+		<p>
+			<a href="#" class="btn"><span><span>longer button text</span></span></a> &nbsp;<code>&lt;a&gt;</code>
+		</p>
+		<p>
+			<button type="button" class="btn"><span><span>longer button text</span></span></button> &nbsp;<code>&lt;button&gt;</code>
+		</p>
+		<p>
+			<button type="button" class="btn"><span><span>button</span></span></button>&nbsp;<button type="button" class="btn"><span><span>button</span></span></button>&nbsp;<button type="button" class="btn"><span><span>button</span></span></button> &nbsp;<code>&lt;button&gt; &lt;button&gt; &lt;button&gt;</code>
+		</p>
+		<p>
+			<button type="button" class="btn primary"><span><span>Save</span></span></button>&nbsp;<button type="button" class="btn"><span><span>Cancel</span></span></button>
+			&nbsp;<code>&lt;button class="primary"&gt; &lt;button&gt;</code>
+		</p>
+		<p>
+			<button type="button" class="btn pill-l"><span><span>Left</span></span></button><button type="button" class="btn pill-c"><span><span>Center</span></span></button><button type="button" class="btn pill-r"><span><span>Right</span></span></button>
+				&nbsp;<code>&lt;button class="pill-l"&gt;&lt;button class="pill-c"&gt;&lt;button class="pill-r"&gt;</code>
+		</p>
+	</form>
 
-<form action="#">
-  <p><a href="#" class="btn"><span><span>button</span></span></a> &nbsp;<code>&lt;a&gt;</code></p>
-
-  <p><button type="button" class="btn"><span><span>button</span></span></button> &nbsp;<code>&lt;button&gt;</code></p>
-
-  <p><a href="#" class="btn"><span><span>longer button text</span></span></a> &nbsp;<code>&lt;a&gt;</code></p>
-
-  <p><button type="button" class="btn"><span><span>longer button text</span></span></button> &nbsp;<code>&lt;button&gt;</code></p>
-
-  <p><button type="button" class="btn"><span><span>button</span></span></button>&nbsp;<button type="button" class="btn"><span><span>button</span></span></button>&nbsp;<button type="button" class="btn"><span><span>button</span></span></button> &nbsp;<code>&lt;button&gt; &lt;button&gt; &lt;button&gt;</code></p>
-  
-  <p><button type="button" class="btn primary"><span><span>Save</span></span></button>&nbsp;<button type="button" class="btn"><span><span>Cancel</span></span></button>
-  &nbsp;<code>&lt;button class="primary"&gt; &lt;button&gt;</code></p>
-  
-  <p><button type="button" class="btn pill-l"><span><span>Left</span></span></button><button type="button" class="btn pill-c"><span><span>Center</span></span></button><button type="button" class="btn pill-r"><span><span>Right</span></span></button>
-  &nbsp;<code>&lt;button class="pill-l"&gt;&lt;button class="pill-c"&gt;&lt;button class="pill-r"&gt;</code></p>
-
-</form>
-
-<h2>Reasons for 2 nested spans:</h2>
-<ol>
-  <li>The inner <code>span</code> creates the top and bottom borders. Because <code>button</code> and <code>a</code> are inline elements, top/bottom borders and padding do not affect the height of parent elements (such as the outer <code>span</code>). So with the same top/bottom padding of both <code>span</code> elements, the left/right borders of the outer <code>span</code> stop short of the top/bottom borders of the inner <code>span</code>.</li>
-  <li>The outer <code>span</code> is necessary to fix bugs in Gecko-based browsers and in IE (separate issues for both). Gecko browsers add an extra 3px of padding inside <code>button</code> elements which can't be eliminated. Without the outer span, top/bottom and left/right borders wouldn't connect. IE just has trouble styling <code>button</code>s and nested elements inside them, so the majority of visible styles are applied to two inner <code>span</code>s.</li>
-</ol>
-
+	<h2>Reasons for 2 nested spans:</h2>
+	<ol>
+		<li>The inner <code>span</code> creates the top and bottom borders. Because <code>button</code> and <code>a</code> are inline elements, top/bottom borders and padding do not affect the height of parent elements (such as the outer <code>span</code>). So with the same top/bottom padding of both <code>span</code> elements, the left/right borders of the outer <code>span</code> stop short of the top/bottom borders of the inner <code>span</code>.</li>
+		<li>The outer <code>span</code> is necessary to fix bugs in Gecko-based browsers and in IE (separate issues for both). Gecko browsers add an extra 3px of padding inside <code>button</code> elements which can't be eliminated. Without the outer span, top/bottom and left/right borders wouldn't connect. IE just has trouble styling <code>button</code>s and nested elements inside them, so the majority of visible styles are applied to two inner <code>span</code>s.</li>
+	</ol>
 
 </body>
 </html>
